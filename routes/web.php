@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BirthController;
 use App\Http\Controllers\MyDocumentController;
+use App\Http\Controllers\NationalIDCardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,6 @@ Route::middleware('auth')->group(function () {
 Route::resource('birth', BirthController::class);
 // Route::resource('/documents', MyDocumentController::class);
 Route::get('/documents', [MyDocumentController::class, 'index'])->name('documents');
+Route::resource('idcard', NationalIDCardController::class);
+Route::get('idcard/getid', [NationalIDCardController::class, 'getID'])->name('idcard.getID');
 require __DIR__.'/auth.php';

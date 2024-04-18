@@ -32,4 +32,8 @@ class Birth extends Model
         'id_no2',
         'MOccupation'
     ];
+    public function nationalID()
+    {
+        return $this->hasOne(NationalIDCard::class);
+    }
 }
