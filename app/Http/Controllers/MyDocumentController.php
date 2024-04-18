@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Birth;
 use Illuminate\Http\Request;
 
 class MyDocumentController extends Controller
@@ -11,7 +12,8 @@ class MyDocumentController extends Controller
      */
     public function index()
     {
-        return view('document.index');
+        $birth = Birth::first();
+        return view('document.index', ['birth' => $birth]);
     }
 
     /**
