@@ -32,8 +32,7 @@ class BirthController extends Controller
         Birth::create($request->all());
 
         return redirect()->route('birth.index')
-                     ->with('success', 'Birth record created successfully.');
-
+        ->with('success', 'Birth record created successfully.');
     }
 
     /**

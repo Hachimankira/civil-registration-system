@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Birth;
+use App\Models\NationalIDCard;
 use Illuminate\Http\Request;
 
 class NationalIDCardController extends Controller
@@ -12,28 +13,27 @@ class NationalIDCardController extends Controller
      */
     public function index()
     {
-        //
+        $datas = NationalIDCard::all();
+        return view('nationalIDCard.list', compact('datas'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function getid()
-    {
-        return view('nationalIDCard.getid');
-    }
     public function create(Request $request)
     {
         $birth = Birth::find($request->birth_id);
         return view('nationalIDCard.add', ['birth' => $birth]);
     }
-
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        NationalIDCard::create($request->all());
+
+        return redirect()->route('idcard.index')
+        ->with('success', 'National Card registered successfully.');
     }
 
     /**
@@ -49,7 +49,8 @@ class NationalIDCardController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = NationalIDCard::find($id);
+        return view('nationalIDCard.edit' , compact('data'));
     }
 
     /**
@@ -57,7 +58,11 @@ class NationalIDCardController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = NationalIDCard::find($id);
+        $data->update($request->all());
+
+        return redirect('/idcard')
+                     ->with('success', 'National ID Card updated successfully.');
     }
 
     /**

@@ -54,7 +54,7 @@
                             {{ __('Passport Registration') }}
                         </x-dropdown-link>
 
-                        <x-dropdown-link :href="route('idcard.create')">
+                        <x-dropdown-link :href="url('add')">
                             {{ __('National ID Registration') }}
                         </x-dropdown-link>
                     </x-slot>

@@ -14,7 +14,7 @@
                             <h1 class="h2">National ID Card Registration Form</h1>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('birth.store') }}" method="POST">
+                            <form action="{{ route('idcard.store') }}" method="POST">
                                 @csrf
                                 <div class="row">
                                     <h2 class="h3">Personal Info</h2>
@@ -31,6 +31,15 @@
                                                 <label class="text-label">Last Name*</label>
                                                 <input type="text" name="lastName" value="{{ $birth->lastName }}" class="form-control"
                                                     placeholder="Montana" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <label class="text-label">Birth Id*</label>
+                                                    <input type="text" name="birth_id" value="{{ $birth->id }}" class="form-control"
+                                                        placeholder="111111" required="">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12">
@@ -52,7 +61,7 @@
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">Permanent Address*</label>
-                                                <input type="text" name="permanentAddress" value="{{ $birth->permanentAddress }}" class="form-control"
+                                                <input type="text" name="permanentAddress" value="{{ $birth->ward_no }} , {{ $birth->city }} , {{ $birth->district }}" class="form-control"
                                                     required="">
                                             </div>
                                         </div>
@@ -76,6 +85,7 @@
                                             <h2 class="h3">Father Info</h2>
                                         </div>
 
+                                        
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">First Name*</label>
