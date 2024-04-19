@@ -21,9 +21,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::resource('birth', BirthController::class);
-// Route::resource('/documents', MyDocumentController::class);
+Route::resource('/documents', MyDocumentController::class);
 Route::get('/documents', [MyDocumentController::class, 'index'])->name('documents');
+// Route::get('/documents/{id}', [MyDocumentController::class, 'show'])->name('documents');
+
 Route::resource('idcard', NationalIDCardController::class);
 Route::get('/add', function () {
     return view('birthid');
-});require __DIR__.'/auth.php';
+});
+Route::get('/doc', function () {
+    return view('doc');
+});
+require __DIR__.'/auth.php';

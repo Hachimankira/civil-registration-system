@@ -90,28 +90,28 @@
                                             <div class="form-group">
                                                 <label class="text-label">First Name*</label>
                                                 <input type="text" name="fatherFName" value="{{ $birth->fatherFName }}" class="form-control"
-                                                    placeholder="Parsley" required="">
+                                                    placeholder="Parsley" required="" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">Last Name*</label>
                                                 <input type="text" name="fatherLName" value="{{ $birth->fatherLName }}" class="form-control"
-                                                    placeholder="Parsley" required="">
+                                                    placeholder="Parsley" required="" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">Permanent Address*</label>
                                                 <input type="text" name="permanentFAddress" value="{{ $birth->permanentFAddress }}" class="form-control"
-                                                    placeholder="Parsley" required="">
+                                                    placeholder="Parsley" required="" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">National ID card no*</label>
                                                 <input type="text" name="id_no1" value="{{ $birth->id_no1 }}" class="form-control"
-                                                    required="">
+                                                    required="" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12">

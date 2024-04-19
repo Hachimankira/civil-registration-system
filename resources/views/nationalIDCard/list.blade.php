@@ -52,7 +52,9 @@
                                                 <td>{{ $data->created_at }} </td>
                                                 <td>
                                                     <a href="{{ url('idcard/'. $data->id . '/edit')}}" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-                                            </tr>
+                                                    <a href="{{ url('/documents/' . $data->birth_id)}}" class="btn btn-sm btn-primary"><i class="la la-eye"></i></a>
+                                                </td>
+                                                </tr>
                                             @endforeach
                                         </tbody>
                                     </table>

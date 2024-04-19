@@ -10,9 +10,9 @@ class MyDocumentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $birth = Birth::first();
+        $birth = Birth::find($request->birth_id);
         return view('document.index', ['birth' => $birth]);
     }
 
@@ -36,9 +36,10 @@ class MyDocumentController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {
-        //
-    }
+{
+    $birth = Birth::find($id);
+        return view('document.index', ['birth' => $birth]);
+}
 
     /**
      * Show the form for editing the specified resource.

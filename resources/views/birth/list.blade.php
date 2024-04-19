@@ -50,6 +50,7 @@
                                                 <td>{{ $birth->fatherFName }} {{ $birth->fatherLName }}</td>
                                                 <td>
                                                     <a href="{{ url('birth/'. $birth->id . '/edit')}}" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
+                                                    <a href="{{ url('/documents/' . $birth->id )}}" class="btn btn-sm btn-primary"><i class="la la-eye"></i></a>
                                             </tr>
                                             @endforeach
                                         </tbody>

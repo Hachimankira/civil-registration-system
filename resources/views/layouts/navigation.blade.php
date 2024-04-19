@@ -18,7 +18,7 @@
                 </div>
                 <!-- My documents -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('documents')" :active="request()->routeIs('documents')">
+                    <x-nav-link :href="url('add')" :active="request()->routeIs('documents')">
                         {{ __('My Documents') }}
                     </x-nav-link>
                 </div>
@@ -42,6 +42,10 @@
                             {{ __('Birth Registration') }}
                         </x-dropdown-link>
 
+                        <x-dropdown-link :href="url('add')">
+                            {{ __('National ID Registration') }}
+                        </x-dropdown-link>
+                        
                         <x-dropdown-link :href="route('birth.create')">
                             {{ __('Death Registration') }}
                         </x-dropdown-link>
@@ -52,10 +56,6 @@
 
                         <x-dropdown-link :href="route('birth.create')">
                             {{ __('Passport Registration') }}
-                        </x-dropdown-link>
-
-                        <x-dropdown-link :href="url('add')">
-                            {{ __('National ID Registration') }}
                         </x-dropdown-link>
                     </x-slot>
                 </x-dropdown>
