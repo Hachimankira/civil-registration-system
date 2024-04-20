@@ -36,4 +36,8 @@ class Birth extends Model
     {
         return $this->hasOne(NationalIDCard::class);
     }
+    public function voterCard()
+    {
+        return $this->hasOne(VoterCard::class);
+    }
 }

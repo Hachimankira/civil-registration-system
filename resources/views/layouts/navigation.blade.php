@@ -18,7 +18,7 @@
                 </div>
                 <!-- My documents -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('add')" :active="request()->routeIs('documents')">
+                    <x-nav-link :href="url('doc')" :active="request()->routeIs('documents')">
                         {{ __('My Documents') }}
                     </x-nav-link>
                 </div>

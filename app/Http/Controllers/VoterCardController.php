@@ -3,33 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Models\Birth;
+use App\Models\VoterCard;
 use Illuminate\Http\Request;
 
-class MyDocumentController extends Controller
+class VoterCardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $birth = Birth::find($request->birth_id);
-        return view('document.index', ['birth' => $birth]);
+        $datas = VoterCard::all();
+        return view('voterCard.list', compact('datas'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $birth = Birth::find($request->birth_id);
+        return view('voterCard.add', ['birth' => $birth]);
     }
-
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        VoterCard::create($request->all());
+
+        return redirect()->route('idcard.index')
+        ->with('success', 'National Card registered successfully.');
     }
 
     /**
@@ -37,8 +41,7 @@ class MyDocumentController extends Controller
      */
     public function show(string $id)
     {
-        $birth = Birth::find($id);
-        return view('document.index', ['birth' => $birth]);
+        //
     }
 
     /**
