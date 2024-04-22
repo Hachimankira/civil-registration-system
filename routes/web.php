@@ -5,14 +5,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\MyDocumentController;
 use App\Http\Controllers\NationalIDCardController;
 use App\Http\Controllers\ProfileController;
-use App\Models\VoterCard;
+use App\Http\Controllers\VoterCardController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -27,9 +27,9 @@ Route::get('/documents', [MyDocumentController::class, 'index'])->name('document
 // Route::get('/documents/{id}', [MyDocumentController::class, 'show'])->name('documents');
 
 Route::resource('idcard', NationalIDCardController::class);
-Route::resource('voter', VoterCard::class);
+Route::resource('voter', VoterCardController::class);
 Route::get('/add', function () {
-    return view('birthid');
+    return view('nationalIDCard.get');
 });
 Route::get('/doc', function () {
     return view('doc');

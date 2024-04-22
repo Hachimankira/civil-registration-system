@@ -14,7 +14,7 @@ class VoterCardController extends Controller
     public function index()
     {
         $datas = VoterCard::all();
-        return view('voterCard.list', compact('datas'));
+        return view('voter.list', compact('datas'));
     }
 
     /**
@@ -23,7 +23,7 @@ class VoterCardController extends Controller
     public function create(Request $request)
     {
         $birth = Birth::find($request->birth_id);
-        return view('voterCard.add', ['birth' => $birth]);
+        return view('voter.add', ['birth' => $birth]);
     }
     /**
      * Store a newly created resource in storage.
@@ -32,7 +32,7 @@ class VoterCardController extends Controller
     {
         VoterCard::create($request->all());
 
-        return redirect()->route('idcard.index')
+        return redirect()->route('voter.index')
         ->with('success', 'National Card registered successfully.');
     }
 

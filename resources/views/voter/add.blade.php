@@ -37,7 +37,7 @@
                                             <div class="form-group">
                                                 <div class="form-group">
                                                     <label class="text-label">Birth Id*</label>
-                                                    <input type="text" name="birth_id" value="{{ $birth->id ?? '' }}" class="form-control"
+                                                    <input type="text" name="birth_id" value="{{ $birth->id }}" class="form-control"
                                                         placeholder="111111" required="">
                                                 </div>
                                             </div>
@@ -65,6 +65,21 @@
                                                     required="">
                                             </div>
                                         </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <div class="form-group">
+                                                <label class="text-label">Current Address*</label>
+                                                <input type="text" name="currentAddress" class="form-control"
+                                                    required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <div class="form-group">
+                                                <label class="text-label">Issued Place*</label>
+                                                <input type="text" name="issuedPlace" class="form-control"
+                                                    required="">
+                                            </div>
+                                        </div>
+
                                         <hr class="my-4 border-black">
                                         <!--Father Info-->
                                         <div class="col-lg-12 mb-12">

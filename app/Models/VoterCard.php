@@ -15,6 +15,8 @@ class VoterCard extends Model
         'gender',
         'dateOfBirth',
         'permanentAddress',
+        'currentAddress',
+        'issuedPlace',
         'fatherFName',
         'fatherLName',
         'permanentFAddress',

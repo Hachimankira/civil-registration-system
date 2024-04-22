@@ -20,7 +20,7 @@
                                 </div>
                             @endif
                             <div class="card-header">
-                                <h4 class="h2">National Id card </h4>
+                                <h4 class="h2">Voter List</h4>
                                 <a href="{{route('idcard.create')}}" class="btn btn-primary">+ Add new</a>
                             </div>
                             <div class="card-body">

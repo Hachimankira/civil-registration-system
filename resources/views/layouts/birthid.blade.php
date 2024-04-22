@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            National ID Card
+            @yield('title')
         </h2>
     </x-slot>
     <div class="py-12">
@@ -13,7 +13,7 @@
                             <h1 class="h2">Fill up to continue!</h1>
                         </div>
                         <div class="card-body">
-                            <form action="/idcard/create" method="GET">
+                            <form action="@yield('action')" method="GET">
                                 <div class="col-lg-6 mb-4">
                                     <div class="form-group">
                                         <label class="text-label" for="birth-id">Please enter your birth ID:</label>

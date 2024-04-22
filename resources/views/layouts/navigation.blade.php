@@ -50,7 +50,7 @@
                             {{ __('Death Registration') }}
                         </x-dropdown-link>
 
-                        <x-dropdown-link :href="route('birth.create')">
+                        <x-dropdown-link :href="url('/vote')">
                             {{ __('Voter Registration') }}
                         </x-dropdown-link>
 

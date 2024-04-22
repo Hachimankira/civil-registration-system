@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('voter_cards', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('birth_id')->nullable();
+            $table->unsignedBigInteger('birth_id');
             $table->string('firstName');
             $table->string('lastName');
             $table->string('gender');
             $table->string('dateOfBirth');
             $table->string('permanentAddress');
+            $table->string('currentAddress');
+            $table->string('issuedPlace');
             $table->string('fatherFName');
             $table->string('fatherLName');
             $table->string('permanentFAddress');

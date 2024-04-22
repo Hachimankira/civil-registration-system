@@ -1,9 +1,9 @@
 @extends('layouts.birthid')
 
 @section('title')
-My Documents
+Voeter Card Registration
 @endsection
 
 @section('action')
-/documents
+/idcard/create
 @endsection
