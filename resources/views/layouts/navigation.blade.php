@@ -46,7 +46,7 @@
                             {{ __('National ID Registration') }}
                         </x-dropdown-link>
                         
-                        <x-dropdown-link :href="route('birth.create')">
+                        <x-dropdown-link :href="url('get_id')">
                             {{ __('Death Registration') }}
                         </x-dropdown-link>
 
@@ -54,9 +54,9 @@
                             {{ __('Voter Registration') }}
                         </x-dropdown-link>
 
-                        <x-dropdown-link :href="route('birth.create')">
+                        {{-- <x-dropdown-link :href="route('birth.create')">
                             {{ __('Passport Registration') }}
-                        </x-dropdown-link>
+                        </x-dropdown-link> --}}
                     </x-slot>
                 </x-dropdown>
             </div>

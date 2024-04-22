@@ -26,10 +26,10 @@
                     <div class="px-4 py-8">
                         <h2 class="h1 text-center">Our Services</h2>
                         <x-features heading="Birth Registration" description="Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place." imgSrc="/images/logo.png" link="/birth/create"/>
-                        <x-feature-right heading="Nation ID card Registration" description="Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place." imgSrc="/images/logo.png" link="/idcard/create"/>
-                        <x-features heading="Voter card Registration" description="Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place." imgSrc="/images/logo.png" link="/birth/create"/>
-                        <x-feature-right heading="Passport Registration" description="Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place." imgSrc="/images/logo.png" link="/birth/create"/>
-                        <x-features heading="Death Registration" description="Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place." imgSrc="/images/logo.png" link="/birth/create"/>            
+                        <x-feature-right heading="Nation ID card Registration" description="Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place." imgSrc="/images/logo.png" link="/add"/>
+                        <x-features heading="Voter card Registration" description="Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place." imgSrc="/images/logo.png" link="/vote"/>
+                        {{-- <x-feature-right heading="Passport Registration" description="Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place." imgSrc="/images/logo.png" link="/birth/create"/> --}}
+                        <x-feature-right heading="Death Registration" description="Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place." imgSrc="/images/logo.png" link="/get_id"/>            
                     </div>
                     </div>
             </div>
