@@ -1,7 +1,7 @@
 @extends('layouts.birthid')
 
 @section('title')
-Voeter Card Registration
+Voter Card Registration
 @endsection
 
 @section('action')

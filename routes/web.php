@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\BirthController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\DeathController;
@@ -22,6 +23,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//admin route
+Route::resource('admin_dashboard', AdminDashboardController::class);
+
 //birth route
 Route::resource('birth', BirthController::class);
 
