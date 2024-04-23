@@ -38,6 +38,7 @@ Route::resource('idcard', NationalIDCardController::class);
 Route::get('/add', function () {
     return view('nationalIDCard.get');
 });
+Route::post('/idcard/{id}/status/{status}', [NationalIDCardController::class, 'changeStatus'])->name('idcard.status');
 
 //voter route
 Route::resource('voter', VoterCardController::class);
@@ -50,4 +51,8 @@ Route::resource('death', DeathController::class);
 Route::get('/get_id', function () {
     return view('death.get');
 });
+
+//status route
+// Route::post('/delivery/{id}/status/{status}', 'DeliveryController@changeStatus')->name('delivery.status');
+
 require __DIR__.'/auth.php';

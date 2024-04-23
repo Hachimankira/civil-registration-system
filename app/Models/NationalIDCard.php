@@ -22,7 +22,7 @@ class NationalIDCard extends Model
         'fatherLName',
         'permanentFAddress',
         'id_no1',
-        
+        'status'
     ];
 
     public function birthRecord()

@@ -13,7 +13,16 @@ class MyDocumentController extends Controller
     public function index(Request $request)
     {
         $birth = Birth::find($request->birth_id);
-        return view('document.index', ['birth' => $birth]);
+        $idcard = $birth->nationalID;
+        $status = $idcard->status;
+
+        if ($status == 'registered') {
+            return view('document.index', ['birth' => $birth , 'idcard' => $idcard]);
+        } else {
+            return view('document.index', ['birth' => $birth]);
+
+        }
+        // return response()->json(['birth' => $birth , 'idcard' => $idcard, 'status' => $status]);
     }
 
     /**
