@@ -22,40 +22,42 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    //admin route
+    Route::resource('admin_dashboard', AdminDashboardController::class);
+
+    //birth route
+    Route::resource('birth', BirthController::class);
+
+    //document route
+    Route::resource('/documents', MyDocumentController::class);
+    Route::get('/documents', [MyDocumentController::class, 'index'])->name('documents');
+    Route::get('/doc', function () {
+        return view('document.get');
+    });
+    // Route::get('/documents/{id}', [MyDocumentController::class, 'show'])->name('documents');
+
+    //national idcard route
+    Route::resource('idcard', NationalIDCardController::class);
+    Route::get('/add', function () {
+        return view('nationalIDCard.get');
+    });
+    Route::post('/idcard/{id}/status/{status}', [NationalIDCardController::class, 'changeStatus'])->name('idcard.status');
+
+    //voter route
+    Route::resource('voter', VoterCardController::class);
+    Route::get('/vote', function () {
+        return view('voter.get');
+    });
+
+    //death route
+    Route::resource('death', DeathController::class);
+    Route::get('/get_id', function () {
+        return view('death.get');
+    });
 });
 
-//admin route
-Route::resource('admin_dashboard', AdminDashboardController::class);
 
-//birth route
-Route::resource('birth', BirthController::class);
-
-//document route
-Route::resource('/documents', MyDocumentController::class);
-Route::get('/documents', [MyDocumentController::class, 'index'])->name('documents');
-Route::get('/doc', function () {
-    return view('document.get');
-});
-// Route::get('/documents/{id}', [MyDocumentController::class, 'show'])->name('documents');
-
-//national idcard route
-Route::resource('idcard', NationalIDCardController::class);
-Route::get('/add', function () {
-    return view('nationalIDCard.get');
-});
-Route::post('/idcard/{id}/status/{status}', [NationalIDCardController::class, 'changeStatus'])->name('idcard.status');
-
-//voter route
-Route::resource('voter', VoterCardController::class);
-Route::get('/vote', function () {
-    return view('voter.get');
-});
-
-//death route
-Route::resource('death', DeathController::class);
-Route::get('/get_id', function () {
-    return view('death.get');
-});
 
 //status route
 // Route::post('/delivery/{id}/status/{status}', 'DeliveryController@changeStatus')->name('delivery.status');
