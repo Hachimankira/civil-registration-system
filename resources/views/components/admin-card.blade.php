@@ -1,6 +1,6 @@
-<div class="col-xl-6 col-xxl-6 col-sm-6">
-    <div class="widget-stat card {{$color}}">
-        <div class="card-body">
+<div class="col-xl-3 col-xxl-3 col-sm-6">
+    <div class="widget-stat card {{$color}} card shadow-lg">
+        <div class="card-body ">
             <div class="media">
                 <span class="mr-3">
                     <i class="la la-users"></i>
