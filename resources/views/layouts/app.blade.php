@@ -71,7 +71,8 @@
     <!-- Form step init -->
     <script src="js/plugins-init/jquery-steps-init.js"></script>
 
-    
+    <!--modal-->
+    @stack('custom-scripts')
 
     </body>
 </html>

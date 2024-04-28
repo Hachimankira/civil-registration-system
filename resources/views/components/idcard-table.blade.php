@@ -29,21 +29,25 @@
                     <td>
                         <div class="basic-dropdown">
                             <div class="dropdown">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <button type="button" class="btn btn-{{ $data->status == 'registered' ? 'success' : ($data->status == 'rejected' ? 'danger' : ($data->status == 'verified' ? 'info' : 'primary')) }} dropdown-toggle" data-toggle="dropdown"> 
                                     {{ $data->status }}
                                 </button>
                                 <div class="dropdown-menu">
-                                    <form action="{{ route('idcard.status', ['id' => $data->id , 'status' => 'submitted']) }}" method="post" >
+                                    <form action="{{ route('idcard.status', ['id' => $data->id , 'status' => 'submitted']) }}" method="POST" >
                                         @csrf
                                         <button type="submit" class="dropdown-item">Submitted</button>
                                     </form>
-                                    <form action="{{ route('idcard.status', ['id' => $data->id , 'status' => 'verified']) }}" method="post" >
+                                    <form action="{{ route('idcard.status', ['id' => $data->id , 'status' => 'verified']) }}" method="POST" >
                                         @csrf
                                         <button type="submit" class="dropdown-item">Verified</button>
                                     </form>
-                                    <form action="{{ route('idcard.status', ['id' => $data->id , 'status' => 'registered']) }}" method="post" >
+                                    <form action="{{ route('idcard.status', ['id' => $data->id , 'status' => 'registered']) }}" method="POST" >
                                         @csrf
                                         <button type="submit" class="dropdown-item">Registered</button>
+                                    </form>
+                                    <form action="{{ route('idcard.status', ['id' => $data->id , 'status' => 'rejected']) }}" method="POST" >
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">Rejected</button>
                                     </form>
                                 </div>
                             </div>

@@ -6,7 +6,7 @@
             <div class="col-lg-12 mt-3">
                     <a href="/birth/create">
                         <button type="button" class="btn btn-primary">
-                            Create Birth
+                            Register Birth
                         </button>
                     </a>
                     <a href="/add">
@@ -52,7 +52,7 @@
             <x-admin-card 
                 color='bg-danger' 
                 name='Rejected' 
-                count='85' 
+                :count='$count_rejected'
                 increased='Increased by 10%' 
             />
             </div>              

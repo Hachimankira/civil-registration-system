@@ -72,4 +72,17 @@ class BirthController extends Controller
     {
         //
     }
+    public function changeStatus($id, $status)
+    {
+        $birth = Birth::find($id);
+
+        if ($birth) {
+            $birth->status = $status;
+            $birth->save();
+
+            return redirect('/birth')->with('success', 'Status changed successfully.');
+        } else {
+            return redirect('/birth')->with('error', 'Birth Card not found.');
+        }
+    }
 }

@@ -16,9 +16,10 @@ class AdminDashboardController extends Controller
         $births = Birth::all();
         $count_submitted = NationalIDCard::where('status', 'submitted')->count();
         $count_verified = NationalIDCard::where('status', 'verified')->count();
-        $count_registered = NationalIDCard::where('status', 'registered')->count();        
+        $count_registered = NationalIDCard::where('status', 'registered')->count(); 
+        $count_rejected = NationalIDCard::where('status', 'rejected')->count();       
         $datas = NationalIDCard::all();
-        return view('admin_dashboard', compact('datas', 'births', 'count_submitted', 'count_verified', 'count_registered'));
+        return view('admin_dashboard', compact('datas', 'births', 'count_submitted', 'count_verified', 'count_registered', 'count_rejected'));
     }
 
     /**

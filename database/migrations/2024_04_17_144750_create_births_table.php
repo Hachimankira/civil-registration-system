@@ -37,7 +37,7 @@ return new class extends Migration
             $table->string('permanentMAddress');
             $table->string('id_no2');
             $table->string('MOccupation');
-
+            $table->string('status')->default('submitted');
 
             $table->timestamps();
         });

@@ -48,6 +48,8 @@ class BirthFactory extends Factory
             'permanentMAddress' => $this->faker->address,
             'id_no2' => $this->faker->randomNumber(9),
             'MOccupation' => $this->faker->jobTitle,
+            'status' => $this->faker->randomElement(['submitted', 'registered', 'verified']),
+
         ];
     }
 }

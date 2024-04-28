@@ -177,6 +177,8 @@
                                     </div>
                                 </div>
                             </form>
+                            <!--modal-->
+                            <x-submit-modal />
                         </div>
                     </div>
                 </div>
@@ -184,4 +186,17 @@
             </div>
         </div>
     </div>
+
+    @push('custom-scripts')
+    <script>
+        $(document).ready(function() {
+            $('form').on('submit', function(e) {
+                e.preventDefault();
+                // Your form submission logic here
+                $('#submitModal').modal('show');
+            });
+        });
+        </script>
+    @endpush
+    
 </x-app-layout>

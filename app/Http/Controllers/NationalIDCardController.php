@@ -73,16 +73,16 @@ class NationalIDCardController extends Controller
         //
     }
     public function changeStatus($id, $status)
-{
-    $nationalIDCard = NationalIDCard::find($id);
+    {
+        $nationalIDCard = NationalIDCard::find($id);
 
-    if ($nationalIDCard) {
-        $nationalIDCard->status = $status;
-        $nationalIDCard->save();
+        if ($nationalIDCard) {
+            $nationalIDCard->status = $status;
+            $nationalIDCard->save();
 
-        return redirect('/idcard')->with('success', 'Status changed successfully.');
-    } else {
-        return redirect('/idcard')->with('error', 'National ID Card not found.');
+            return redirect('/idcard')->with('success', 'Status changed successfully.');
+        } else {
+            return redirect('/idcard')->with('error', 'National ID Card not found.');
+        }
     }
-}
 }

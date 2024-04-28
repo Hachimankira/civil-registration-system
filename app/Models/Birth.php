@@ -30,7 +30,8 @@ class Birth extends Model
         'motherLName',
         'permanentMAddress',
         'id_no2',
-        'MOccupation'
+        'MOccupation',
+        'status'
     ];
     public function nationalID()
     {

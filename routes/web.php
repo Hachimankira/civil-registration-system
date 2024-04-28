@@ -9,6 +9,8 @@ use App\Http\Controllers\NationalIDCardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VoterCardController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -24,13 +26,29 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     //admin route
-    Route::resource('admin_dashboard', AdminDashboardController::class);
+    Route::middleware('admin')->group(function () {
+        Route::get('/admin_dashboard', [AdminDashboardController::class, 'index'])->name('admin_dashboard');
 
-    //birth route
-    Route::resource('birth', BirthController::class);
+        //birth route
+        Route::get('/birth', [BirthController::class, 'index'])->name('birth.index');
+
+        //idcard route
+        Route::get('/idcard', [NationalIDCardController::class, 'index'])->name('idcard.index');
+
+        //voter route
+        Route::get('/voter', [VoterCardController::class, 'index'])->name('voter.index');
+
+    });
+
+    
+    //create birth route
+    Route::get('/birth/create', [BirthController::class, 'create'])->name('birth.create');
+    Route::post('/birth', [BirthController::class, 'store'])->name('birth.store');
+    Route::post('/birth/{id}/status/{status}', [BirthController::class, 'changeStatus'])->name('birth.status');
+
+
 
     //document route
-    Route::resource('/documents', MyDocumentController::class);
     Route::get('/documents', [MyDocumentController::class, 'index'])->name('documents');
     Route::get('/doc', function () {
         return view('document.get');
