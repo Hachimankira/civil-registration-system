@@ -21,6 +21,7 @@ class VoterCard extends Model
         'fatherLName',
         'permanentFAddress',
         'id_no1',
+        'status',
     ];
     public function birthRecord()
     {

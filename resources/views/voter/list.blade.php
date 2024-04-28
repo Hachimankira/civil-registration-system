@@ -23,43 +23,7 @@
                                 <h4 class="h2">Voter List</h4>
                                 <a href="{{route('idcard.create')}}" class="btn btn-primary">+ Add new</a>
                             </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="example3" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Gender</th>
-                                                <th>Date of Birth</th>
-                                                <th>Permanent Address</th>
-                                                <th>Current Address</th>
-                                                <th>Issued Place</th>
-                                                <td>Issued Date </td>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach($datas as $data)
-                                            <tr>
-                                                <td>{{ $data->id }}</td>
-                                                <td>{{ $data->firstName }} {{$data->lastName}}</td>
-                                                <td>{{ $data->gender }}</td>
-                                                <td>{{ $data->dateOfBirth }}</td>
-                                                <td>{{ $data->permanentAddress }} </td>
-                                                <td>{{ $data->currentAddress }} </td>
-                                                <td>{{ $data->issuedPlace }} </td>
-                                                <td>{{ $data->created_at }} </td>
-                                                <td>
-                                                    <a href="{{ url('idcard/'. $data->id . '/edit')}}" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-                                                    <a href="{{ url('/documents/' . $data->birth_id)}}" class="btn btn-sm btn-primary"><i class="la la-eye"></i></a>
-                                                </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            <x-voter-table :datas="$datas" />
                         </div>
                     </div>
             </div>

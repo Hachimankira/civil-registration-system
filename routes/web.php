@@ -67,6 +67,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/vote', function () {
         return view('voter.get');
     });
+    Route::post('/voter/{id}/status/{status}', [VoterCardController::class, 'changeStatus'])->name('voter.status');
 
     //death route
     Route::resource('death', DeathController::class);

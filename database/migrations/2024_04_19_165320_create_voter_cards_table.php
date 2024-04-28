@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('fatherLName');
             $table->string('permanentFAddress');
             $table->string('id_no1');
+            $table->string('status')->default('submitted');
             $table->timestamps();
             $table->foreign('birth_id')->references('id')->on('births')->onDelete('cascade');
         });

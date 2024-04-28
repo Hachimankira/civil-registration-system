@@ -22,23 +22,23 @@
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">First Name*</label>
-                                                <input type="text" name="firstName" value="{{ $birth->firstName }}" class="form-control"
-                                                    placeholder="Parsley" required="">
+                                                <input type="text" name="firstName" value="{{ $birth->firstName }}"
+                                                    class="form-control" placeholder="Parsley" required="">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">Last Name*</label>
-                                                <input type="text" name="lastName" value="{{ $birth->lastName }}" class="form-control"
-                                                    placeholder="Montana" required="">
+                                                <input type="text" name="lastName" value="{{ $birth->lastName }}"
+                                                    class="form-control" placeholder="Montana" required="">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <div class="form-group">
                                                     <label class="text-label">Birth Id*</label>
-                                                    <input type="text" name="birth_id" value="{{ $birth->id }}" class="form-control"
-                                                        placeholder="111111" required="">
+                                                    <input type="text" name="birth_id" value="{{ $birth->id }}"
+                                                        class="form-control" placeholder="111111" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -46,23 +46,28 @@
                                             <div class="form-group">
                                                 <label class="form-label">Gender</label>
                                                 <select class="form-control" name="gender">
-                                                    <option value="Male" {{ $birth->gender == 'Male' ? 'selected' : '' }}>Male</option>
-                                                    <option value="Female" {{ $birth->gender == 'Female' ? 'selected' : '' }}>Female</option>
+                                                    <option value="Male"
+                                                        {{ $birth->gender == 'Male' ? 'selected' : '' }}>Male</option>
+                                                    <option value="Female"
+                                                        {{ $birth->gender == 'Female' ? 'selected' : '' }}>Female
+                                                    </option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">Date of Birth*</label>
-                                                <input type="text" name="dateOfBirth" value="{{ $birth->dateOfBirth }}" class="form-control"
+                                                <input type="text" name="dateOfBirth"
+                                                    value="{{ $birth->dateOfBirth }}" class="form-control"
                                                     required="">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">Permanent Address*</label>
-                                                <input type="text" name="permanentAddress" value="{{ $birth->ward_no }} , {{ $birth->city }} , {{ $birth->district }}" class="form-control"
-                                                    required="">
+                                                <input type="text" name="permanentAddress"
+                                                    value="{{ $birth->ward_no }} , {{ $birth->city }} , {{ $birth->district }}"
+                                                    class="form-control" required="">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mb-4">
@@ -85,33 +90,36 @@
                                             <h2 class="h3">Father Info</h2>
                                         </div>
 
-                                        
+
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">First Name*</label>
-                                                <input type="text" name="fatherFName" value="{{ $birth->fatherFName }}" class="form-control"
+                                                <input type="text" name="fatherFName"
+                                                    value="{{ $birth->fatherFName }}" class="form-control"
                                                     placeholder="Parsley" required="" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">Last Name*</label>
-                                                <input type="text" name="fatherLName" value="{{ $birth->fatherLName }}" class="form-control"
+                                                <input type="text" name="fatherLName"
+                                                    value="{{ $birth->fatherLName }}" class="form-control"
                                                     placeholder="Parsley" required="" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">Permanent Address*</label>
-                                                <input type="text" name="permanentFAddress" value="{{ $birth->permanentFAddress }}" class="form-control"
+                                                <input type="text" name="permanentFAddress"
+                                                    value="{{ $birth->permanentFAddress }}" class="form-control"
                                                     placeholder="Parsley" required="" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <div class="form-group">
                                                 <label class="text-label">National ID card no*</label>
-                                                <input type="text" name="id_no1" value="{{ $birth->id_no1 }}" class="form-control"
-                                                    required="" readonly>
+                                                <input type="text" name="id_no1" value="{{ $birth->id_no1 }}"
+                                                    class="form-control" required="" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -129,19 +137,29 @@
             </div>
         </div>
     </div>
-    
+
     @push('custom-scripts')
-    <script>
-        $(document).ready(function() {
-            $('form').on('submit', function(e) {
-                e.preventDefault();
-                // Your form submission logic here
-                $('#submitModal').modal('show');
+        <script>
+            $(document).ready(function() {
+                $('form').on('submit', function(e) {
+                    e.preventDefault();
+
+                    var form = $(this);
+                    var url = form.attr('action');
+
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: form.serialize(), // serializes the form's elements.
+                        success: function(data) {
+                            $('#submitModal').modal('show');
+                        }
+                    });
+                });
             });
-        });
         </script>
     @endpush
-    
+
     {{-- <script>
         var birthId = prompt("Please enter your birth ID:");
         if (birthId != null) {

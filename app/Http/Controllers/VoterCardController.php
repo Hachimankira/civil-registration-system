@@ -36,6 +36,20 @@ class VoterCardController extends Controller
         ->with('success', 'National Card registered successfully.');
     }
 
+    public function changeStatus($id, $status)
+    {
+        $data = VoterCard::find($id);
+
+        if ($data) {
+            $data->status = $status;
+            $data->save();
+
+            return redirect('/voter')->with('success', 'Status changed successfully.');
+        } else {
+            return redirect('/voter')->with('error', 'Voter Card not found.');
+        }
+    }
+
     /**
      * Display the specified resource.
      */
