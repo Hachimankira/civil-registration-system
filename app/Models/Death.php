@@ -11,10 +11,15 @@ class Death extends Model
     protected $fillable = [
         'firstName',
         'lastName',
+        'birth_id',
         'gender',
         'permanentAddress',
         'dateOfBirth',
         'dateOfDeath',
         'cause',      
     ];
+    public function birthRecord()
+    {
+        return $this->belongsTo(Birth::class);
+    }
 }

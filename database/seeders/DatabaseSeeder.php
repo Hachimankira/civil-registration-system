@@ -19,7 +19,12 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Test User',
-            'email' => 'test@example.com',
+            'email' => 't@t.com',
+            'password' => '11111111'
+        ]);
+        User::factory()->create([
+            'name' => 'admin',
+            'email' => 'a@a.com',
             'password' => '11111111'
         ]);
         Birth::factory()->times(100)->create();

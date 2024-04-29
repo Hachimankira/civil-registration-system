@@ -41,4 +41,8 @@ class Birth extends Model
     {
         return $this->hasOne(VoterCard::class);
     }
+    public function death()
+    {
+        return $this->hasOne(Death::class);
+    }
 }

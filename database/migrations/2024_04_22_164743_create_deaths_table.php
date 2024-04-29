@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('deaths', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('birth_id');
             $table->string('firstName');
             $table->string('lastName');
             $table->string('gender');
@@ -21,6 +22,8 @@ return new class extends Migration
             $table->string('dateOfDeath');
             $table->string('cause');
             $table->timestamps();
+            $table->foreign('birth_id')->references('id')->on('births')->onDelete('cascade');
+
         });
     }
 

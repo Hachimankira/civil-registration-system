@@ -14,10 +14,11 @@ class MyDocumentController extends Controller
     {
         $birth = Birth::find($request->birth_id);
         $idcard = $birth->nationalID;
+        $voter = $birth->voterCard;
         $status = $idcard->status;
 
         if ($status == 'registered') {
-            return view('document.index', ['birth' => $birth , 'idcard' => $idcard]);
+            return view('document.index', ['birth' => $birth , 'idcard' => $idcard , 'voter' => $voter]);
         } else {
             return view('document.index', ['birth' => $birth]);
 
