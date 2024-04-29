@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="max-w-9xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
             <!-- Quick Links -->
             <div class="row mt-3 col-lg-12">
                 <h1 class=" h2 mt-3">Quick Links</h1>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!--tabs-->
             {{-- <div class="default-tab">
                 <h1 class="h2 mt-5">All Table</h1>

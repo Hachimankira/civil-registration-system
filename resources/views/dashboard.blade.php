@@ -23,6 +23,7 @@
                         </div>
                     </div>
 
+
                     <div class="px-4 py-8">
                         <h2 class="h1 text-center">Our Services</h2>
                         <x-features heading="Birth Registration" description="Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place." imgSrc="/images/logo.png" link="/birth/create"/>

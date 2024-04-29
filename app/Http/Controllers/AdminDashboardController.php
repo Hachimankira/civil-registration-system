@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Birth;
 use App\Models\NationalIDCard;
+use App\Models\VoterCard;
 use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
@@ -63,6 +64,15 @@ class AdminDashboardController extends Controller
         ];
         return view('bar-chart', compact('data'));
     }
+
+    // public function dashboard()
+    // {
+    //     $birth = Birth::where('status', 'registered')->count();
+    //     $idcard = NationalIDCard::where('status', 'registered')->count();
+    //     $voter = VoterCard::where('status', 'registered')->count();
+        
+    //     return view('dashboard', compact('birth', 'idcard', 'voter'));
+    // }
 
     /**
      * Show the form for creating a new resource.

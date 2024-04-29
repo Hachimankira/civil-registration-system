@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\DeathController;
 use App\Http\Controllers\MyDocumentController;
 use App\Http\Controllers\NationalIDCardController;
+use App\Http\Controllers\OtherController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VoterCardController;
 use Illuminate\Support\Facades\Route;
@@ -74,6 +75,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/get_id', function () {
         return view('death.get');
     });
+
+    //contact page
+    Route::get('/contact', [OtherController::class, 'contact'])->name('contact');
+    Route::post('/contact', [OtherController::class, 'store'])->name('contact.store');
+    //about page
+    Route::get('/about', [OtherController::class, 'about'])->name('about');
 });
 
 
