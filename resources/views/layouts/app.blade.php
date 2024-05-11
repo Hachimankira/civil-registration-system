@@ -14,8 +14,8 @@
 
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/logo.png') }}">
-    <link rel="stylesheet" href="{{ url('vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/chartist/css/chartist.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ url('vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('vendor/chartist/css/chartist.min.css') }}"> --}}
 
     <!-- Datatable -->
     <link href="{{ url('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
@@ -52,7 +52,8 @@
 
     <!-- Scripts -->
     <script src="{{ url('vendor/global/global.min.js') }}"></script>
-    <script src="{{ url('vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
+    {{-- <script src="{{ url('vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script> --}}
 
     <!-- Datatable -->
     <script src="{{ url('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
