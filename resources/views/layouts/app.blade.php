@@ -53,28 +53,10 @@
     <!-- Scripts -->
     <script src="{{ url('vendor/global/global.min.js') }}"></script>
     <script src="{{ url('vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
-    <script src="{{ url('js/custom.min.js') }}"></script>
-    <script src="{{ url('js/dlabnav-init.js') }}"></script>
 
     <!-- Datatable -->
     <script src="{{ url('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ url('js/plugins-init/datatables.init.js') }}"></script>
-
-    <!-- Svganimation scripts -->
-    <script src="{{ url('vendor/svganimation/vivus.min.js') }}"></script>
-    <script src="{{ url('vendor/svganimation/svg.animation.js') }}"></script>
-    <script src="{{ url('js/styleSwitcher.js') }}"></script>
-
-    <script src="{{ url('vendor/jquery-steps/build/jquery.steps.min.js') }}"></script>
-    <script src="{{ url('vendor/jquery-validation/jquery.validate.min.js') }}"></script>
-    <!-- Form validate init -->
-    <script src="{{ url('js/plugins-init/jquery.validate-init.js') }}"></script>
-
-
-
-    <!-- Form step init -->
-    <script src="js/plugins-init/jquery-steps-init.js"></script>
-
     <!--modal-->
     @stack('custom-scripts')
     <x-foot />
